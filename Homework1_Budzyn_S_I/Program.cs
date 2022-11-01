@@ -1,7 +1,7 @@
 ﻿namespace Homework1
 {
     class Program
-    {
+    {// Вітаю. Все бачу і можу коментувати
         public static void Main(string[] args)
         {
             Product product = new Product("Sweater", 25, 1.5f);
