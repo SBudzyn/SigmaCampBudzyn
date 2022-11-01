@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Homework1
-{
+{// Покупка може містити не один товар.
     internal class Buy
     {
         private Product _product = null!;
