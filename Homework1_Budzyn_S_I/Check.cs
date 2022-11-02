@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework1
 {
-    internal class Check
+    internal static class Check
     {
         public static void DisplayProduct(Product product)
         {
@@ -21,9 +21,6 @@ namespace Homework1
             }
             Console.WriteLine($"You are buying {buy.Amount} {productName}. Total price is {buy.CalculatePrice()}");
         }
-        public override string ToString()
-        {
-            return "Check class will help you to display information about a product or about your order";
-        }
+        
     }
 }

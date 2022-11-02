@@ -15,7 +15,7 @@
             Console.WriteLine(buy2);
             Console.WriteLine(buy2.CalculatePrice());
 
-            Console.WriteLine(new Check());
+            
             Check.DisplayBuy(buy);
             Check.DisplayProduct(product); 
 

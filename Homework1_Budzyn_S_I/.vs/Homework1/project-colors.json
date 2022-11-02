@@ -5,6 +5,11 @@
       "ProjectGuid": "f840f6ff-8c6c-468a-995d-78afcd1fc95b",
       "DisplayName": "Homework1",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

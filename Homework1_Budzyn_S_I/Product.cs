@@ -6,11 +6,37 @@ using System.Threading.Tasks;
 
 namespace Homework1
 {
-    internal class Product
+    internal class Product : ICloneable
     {
-        public string Name { get; set; } = null!;
-        public decimal Price { get; set; }
-        public float Weight { get; set; }
+        public string Name { get; private set; } 
+        private decimal _price;
+        public decimal Price 
+        { 
+            get => _price; 
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Price must be more than 0");
+                }
+                else
+                    _price = value;
+            } 
+        }
+        private float _weight;
+        public float Weight 
+        { 
+            get => _weight; 
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Weight must be more than 0");
+                }
+                else
+                    _weight = value;
+            } 
+        }
         public Product(string name, decimal price, float weight)
         {
             this.Name = name;
@@ -20,6 +46,11 @@ namespace Homework1
         public override string ToString()
         {
             return $"Product {Name}, Price - {Price}";
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }
