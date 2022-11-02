@@ -19,14 +19,18 @@ namespace Homework3
         Beef,
         Chicken
     }
-    internal class Meat : DiaryProduct
+    internal class Meat : Product
     {
-        private Category Category { get; }
-        private Type Type { get; } 
-        public Meat(string name, decimal price, float weight, DateOnly expDate, Category category, Type type) : base(name, price, weight, expDate)
+        public Category Category { get; }
+        public Type Type { get; } 
+        public Meat(string name, decimal price, float weight, Category category, Type type) : base(name, price, weight)
         {
             Category = category;
             Type = type;
+        }
+        public override object Clone()
+        {
+            return base.Clone();
         }
         public override void ChangePrice(decimal changePercent)
         {

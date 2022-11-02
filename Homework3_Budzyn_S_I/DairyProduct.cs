@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Homework3
 {
-    internal class DiaryProduct : Product
+    internal class DairyProduct : Product
     {
-        DateOnly ExpirationDate { get; }
-        public DiaryProduct(string name, decimal price, float weight, DateOnly date) : base(name, price, weight)
+        public DateOnly ExpirationDate { get; }
+        public DairyProduct(string name, decimal price, float weight, DateOnly date) : base(name, price, weight)
         {
             ExpirationDate = date;
         }
@@ -42,9 +42,13 @@ namespace Homework3
             }
             base.ChangePrice(changePercent);
         }
+        public override object Clone()
+        {
+            return base.Clone();
+        }
         public override bool Equals(object? obj)
         {
-            DiaryProduct? diaryProduct = obj as DiaryProduct;
+            DairyProduct? diaryProduct = obj as DairyProduct;
             if (diaryProduct == null)
                 return false;
             if (diaryProduct.Name == this.Name && diaryProduct.ExpirationDate == this.ExpirationDate)

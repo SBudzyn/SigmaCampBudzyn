@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3\\Homework3.csproj": {}
+    "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3_Budzyn_S_I\\Homework3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3\\Homework3.csproj": {
+    "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3_Budzyn_S_I\\Homework3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3\\Homework3.csproj",
+        "projectUniqueName": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3_Budzyn_S_I\\Homework3.csproj",
         "projectName": "Homework3",
-        "projectPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3\\Homework3.csproj",
+        "projectPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3_Budzyn_S_I\\Homework3.csproj",
         "packagesPath": "C:\\Users\\LapStore\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3\\obj\\",
+        "outputPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework3_Budzyn_S_I\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LapStore\\AppData\\Roaming\\NuGet\\NuGet.Config",
