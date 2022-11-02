@@ -11,7 +11,10 @@ namespace Homework3
         public DateOnly ExpirationDate { get; }
         public DairyProduct(string name, decimal price, float weight, DateOnly date) : base(name, price, weight)
         {
-            ExpirationDate = date;
+            if (date.ToDateTime(new TimeOnly()) < DateTime.Now)
+            {
+                ExpirationDate = date;
+            }
         }
         public override void ChangePrice(decimal changePercent)
         {

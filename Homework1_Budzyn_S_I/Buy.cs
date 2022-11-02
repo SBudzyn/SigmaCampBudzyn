@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Homework1
-<<<<<<< HEAD
+
 
 {// Покупка може містити не один товар.
     
-=======
-{
->>>>>>> switch
     internal class Buy : ICloneable
     {
         private Product _product = null!;
