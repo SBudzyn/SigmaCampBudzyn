@@ -23,7 +23,7 @@ namespace Homework2
             set { matrix[index1, index2] = value; }
         }
         public void VerticalSnakeInitialization()
-        {
+        {// можна оптимізувати
             int currNum = 1;
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
