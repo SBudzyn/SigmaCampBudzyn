@@ -47,6 +47,7 @@ namespace HW3T2
                     frequencies[num]++;
                 }
             }
+            // Тут роздрук лишній. Треба просто повернути словник
             foreach (var pair in frequencies)
             {
                 Console.WriteLine($"{pair.Key} - {pair.Value}");
@@ -93,6 +94,7 @@ namespace HW3T2
                     return false;
                 }
                 int divs = 0;
+                // Цикл можна скоротити
                 for (int i = 1; i <= number; i++)
                 {
                     if (number % i == 0)
