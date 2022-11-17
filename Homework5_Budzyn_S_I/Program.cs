@@ -1,7 +1,7 @@
 ﻿namespace Homework5
 {
     class Program
-    {
+    {// Ваші бали 93	98	95	98	95
         public static void Main(string[] args)
         {
             Product product = new Product("Apple", 1.5m, 1.5f, Currencies.USD);
