@@ -60,7 +60,7 @@ namespace Homework3
             }
         }
         public override string ToString()
-        {
+        {// треба виводити вмістиме колекції
             return $"Storage with purchases ({_purchases.Count()} items)";
         }
 
