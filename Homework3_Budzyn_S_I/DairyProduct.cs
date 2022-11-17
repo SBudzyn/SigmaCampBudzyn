@@ -17,7 +17,7 @@ namespace Homework3
             }
         }
         public override void ChangePrice(decimal changePercent)
-        {
+        {// константи в цьому методі краще виносити в інший клас з статичними зміннмими.
             int days = (ExpirationDate.ToDateTime(new TimeOnly()) - DateTime.Now).Days;
             if (days > 100)
             {
