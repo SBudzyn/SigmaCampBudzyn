@@ -44,6 +44,7 @@ namespace Homework5
                 
             }
         }
+        // Прив'язка до консолі в модельному класі!!!!
         public void DialogInitialization()
         {
             while (true)
