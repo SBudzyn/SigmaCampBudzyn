@@ -3,7 +3,7 @@
     class Program
     {
         public static void Main(string[] args)
-        {
+        {// main має делегувати роботу на інші класи! Логічно все це перенести в клас меню.
             while (true)
             {
                 Console.WriteLine("Select action:");
@@ -14,6 +14,7 @@
                 Console.WriteLine("Find all apartments where energy wasn`t used (enter zero)");
                 Console.WriteLine("To quit enter q");
                 string? answer = Console.ReadLine();
+                // Краще використовувати switch і кожну дію оформляти окремою функцією. Значно прозоріший був би код.
                 if (answer == "add")
                 {
                     AddInfo("info.txt");
