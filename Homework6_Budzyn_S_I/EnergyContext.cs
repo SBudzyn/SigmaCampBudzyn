@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Homework6
 {
     internal class EnergyContext : DbContext
-    {
+    {// Знову порушення інкапсуляції
         public DbSet<ApartmentData> Apartments { get; set; } = null!;
         public EnergyContext() : base()
         {
