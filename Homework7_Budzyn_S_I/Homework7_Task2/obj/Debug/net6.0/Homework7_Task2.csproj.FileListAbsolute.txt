@@ -1,0 +1,15 @@
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\Homework7_Task2.exe
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\Homework7_Task2.deps.json
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\Homework7_Task2.runtimeconfig.json
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\Homework7_Task2.dll
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\ref\Homework7_Task2.dll
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\bin\Debug\net6.0\Homework7_Task2.pdb
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.csproj.AssemblyReference.cache
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.AssemblyInfoInputs.cache
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.AssemblyInfo.cs
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.csproj.CoreCompileInputs.cache
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.dll
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\ref\Homework7_Task2.dll
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.pdb
+C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework7_Budzyn_S_I\Homework7_Task2\obj\Debug\net6.0\Homework7_Task2.genruntimeconfig.cache
