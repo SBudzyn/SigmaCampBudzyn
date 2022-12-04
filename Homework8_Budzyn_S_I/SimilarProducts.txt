@@ -1,0 +1,13 @@
+apples first sort, apples second sort, apples third sort
+apples second sort, apples first sort, apples third sort
+apples third sort, apples first sort, apples second sort
+pineapples first sort, pineapples second sort
+pineapples second sort, pineapples third sort
+goat milk, pasterized milk, cow milk
+pasterized milk, goat milk, cow milk
+cow milk, goat milk, pasterized milk
+beef, pork, chicken
+pork, beef, chicken
+chicken, pork, beef
+bread, baguette
+baguette, bread

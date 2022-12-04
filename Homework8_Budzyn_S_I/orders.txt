@@ -1,0 +1,6 @@
+ABC company, apples first sort, 2
+City council, pineapples second sort, 1
+Jack`s company, goat milk, 2
+Product company, beef, 1
+ATB, pork, 3
+ATB, bread, 3  
