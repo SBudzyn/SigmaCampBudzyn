@@ -14,12 +14,14 @@ namespace Homework7
     }
     internal static class StorageComparer
     {
-        
+       //хороша ідея окремий клас для порівняння!
+        // чому масив, а не список?
         public static Product[] Compare(Storage storage1, Storage storage2, StorageComparerReturn rType)
         {
             List<Product> retProducts = new List<Product>();
             var products1 = storage1.GetAllProducts().ToList();
             var products2 = storage2.GetAllProducts().ToList();
+            //чому не використані операції для множин?
             if (rType == StorageComparerReturn.CommonProducts)
             {
                 foreach (var product in products1)
