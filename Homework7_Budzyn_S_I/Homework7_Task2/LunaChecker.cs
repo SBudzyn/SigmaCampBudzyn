@@ -16,6 +16,7 @@ namespace Homework7_Task2
             Visa,
             Invalid
         }
+        //константи прийнято іменувати через всі літери великими.
         private const string Invalid = "INVALID";
         private const string AmericanExpress = "American Express";
         private const string MasterCard = "MasterCard";
@@ -90,11 +91,12 @@ namespace Homework7_Task2
             }
 
             byte sum = 0;
+            // можна простіше
             nums.ToList().ForEach(x => sum += x);
             if (sum % 10 == 0)
             {
                 return true;
-            }
+            //else не потрібно
             else
             {
                 return false;
