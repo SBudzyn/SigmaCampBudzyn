@@ -8,58 +8,41 @@ namespace Homework9
 {
     internal static class ExternalSorting
     {
-        private const int chunkSize = 5000;
+        private const int CHUNK_SIZE = 5000;
+        private const string PATH_TO_FILE = @"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\files\";
+        private const string RESULT_PATH = @"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\RESULT.txt";
+        private const string CHUNK_PATTERN = "chunk*.txt";
         public static void Sort(string inputFile)
         {
             using (var reader = new StreamReader(inputFile))
             {
+                int i = 1;
                 while (!reader.EndOfStream)
                 {
+                    
                     List<int> chunk = new List<int>();
-                    while (chunk.Count < chunkSize && !reader.EndOfStream)
+                    while (chunk.Count < CHUNK_SIZE && !reader.EndOfStream)
                     {
-                        List<int> buff = new List<int>();
-                        bool isCont = true;
-                        while (isCont)
+                        var number = ReadOneNumber(reader);
+                        if (number != null)
                         {
-                            var currChar = (char)reader.Read();
-                            if (Char.IsDigit(currChar))
-                            {
-                                int.TryParse(currChar.ToString(), out int res);
-                                buff.Add(res);
-                            }
-                            else
-                            {
-                                int finalScore = 0;
-                                for (int i = 0; i < buff.Count; i++)
-                                {
-                                    finalScore += buff[i] * Convert.ToInt32(Math.Pow(10, buff.Count - i - 1));
-
-                                }
-                                if (buff.Count != 0)
-                                {
-                                    chunk.Add(finalScore);
-                                }
-                                buff.Clear();
-                                isCont = false;
-
-                            }
+                            chunk.Add((int)number);
                         }
                     }
                     MergeSort(chunk, 0, chunk.Count - 1);
+                    using (StreamWriter writer = new StreamWriter(PATH_TO_FILE + $"chunk{i}.txt"))
+                    {
+                        foreach (var num in chunk)
+                        {
+                            writer.WriteLine(num);
+                        }
+                    }
+                    i++;
                 }
                 MergeTheChunks();
             }
         }
-        private static string CreateChunkFile(List<int> nums, int num)
-        {
-            var path = @$"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\Homework9\files\chunk{num}.txt";
-            using (var writer = new StreamWriter(path))
-            {
-                nums.ForEach(n => writer.WriteLine(n));
-            }
-            return path;
-        }
+       
         private static void MergeSort(List<int> arr, int l, int r)
         {
             if (l < r)
@@ -105,80 +88,75 @@ namespace Homework9
 
         private static void MergeTheChunks()
         {
-            string[] paths = Directory.GetFiles(@"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\Homework9\files", "chunk*.txt");
-            int chunks = paths.Length;
-            int recordsize = 100;
-            int maxusage = 500000000;
-            int buffersize = maxusage / chunks;
-            double recordoverhead = 7.5;
-            int bufferlen = (int)(buffersize / recordsize / recordoverhead);
+            string[] paths = Directory.GetFiles(PATH_TO_FILE, CHUNK_PATTERN);
+            
+            StreamReader[] readers = new StreamReader[paths.Length];
 
-            StreamReader[] readers = new StreamReader[chunks];
-            for (int i = 0; i < chunks; i++)
+            for (int i = 0; i < paths.Length; i++)
+            {
                 readers[i] = new StreamReader(paths[i]);
+            }
 
-            Queue<string>[] queues = new Queue<string>[chunks];
-            for (int i = 0; i < chunks; i++)
-                queues[i] = new Queue<string>(bufferlen);
+            int?[] minFromEachFile = new int?[paths.Length];
 
-            for (int i = 0; i < chunks; i++)
-                LoadQueue(queues[i], readers[i], bufferlen);
-
-            StreamWriter sw = new StreamWriter(@"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\Homework9\RESULT.txt");
-            bool done = false;
-            int lowest_index, j;
-            string lowest_value;
-            while (!done)
+            for (int i = 0; i < readers.Length; i++)
             {
-
-                lowest_index = -1;
-                lowest_value = "";
-                for (j = 0; j < chunks; j++)
+                minFromEachFile[i] = ReadOneNumber(readers[i]);
+            }
+            using (StreamWriter writer = new StreamWriter(RESULT_PATH))
+            {
+                while (readers.Any(r => r.EndOfStream != true))
                 {
-                    if (queues[j] != null)
+                    var minIndex = 0;
+                    for (int i = 1; i < minFromEachFile.Length; i++)
                     {
-                        if (lowest_index < 0 || String.CompareOrdinal(queues[j].Peek(), lowest_value) < 0)
+                        if (minFromEachFile[minIndex] == null || minFromEachFile[i] < minFromEachFile[minIndex])
                         {
-                            lowest_index = j;
-                            lowest_value = queues[j].Peek();
-                        }
+                            minIndex = i;
+                        }                      
                     }
-                }
-
-                if (lowest_index == -1)
-                {
-                    done = true;
-                    break;
-                }
-
-                sw.Write(lowest_value + " ");
-
-                queues[lowest_index].Dequeue();
-
-                if (queues[lowest_index].Count == 0)
-                {
-                    LoadQueue(queues[lowest_index],
-                      readers[lowest_index], bufferlen);
-
-                    if (queues[lowest_index].Count == 0)
-                    {
-                        queues[lowest_index] = null;
-                    }
+                    writer.Write(minFromEachFile[minIndex] + " ");
+                    minFromEachFile[minIndex] = ReadOneNumber(readers[minIndex]);
                 }
             }
-            sw.Close();
-
-
+            
         }
-
-        private static void LoadQueue(Queue<string> queue, StreamReader file, int records)
+        private static int? ReadOneNumber(StreamReader reader)
         {
-            for (int i = 0; i < records; i++)
+            List<int> buff = new List<int>();
+            bool isCont = true;
+            while (isCont)
             {
-                if (file.Peek() < 0)
-                    break;
-                queue.Enqueue(file.ReadLine());
+                var currChar = (char)reader.Read();
+                if (Char.IsDigit(currChar))
+                {
+                    int.TryParse(currChar.ToString(), out int res);
+                    buff.Add(res);
+                }
+                else
+                {
+                    int finalScore = 0;
+                    
+                    if (buff.Count != 0)
+                    {
+                        for (int i = 0; i < buff.Count; i++)
+                        {
+                            finalScore += buff[i] * Convert.ToInt32(Math.Pow(10, buff.Count - i - 1));
+
+                        }
+                        return finalScore;
+                    }
+
+                    if (reader.EndOfStream)
+                    {
+                        isCont = false;
+                    }
+
+                }
+                
             }
+            return null;
         }
+        
     }
 }

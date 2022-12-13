@@ -10,11 +10,10 @@ namespace Homework5
 {
     internal class OrderAnalyzer : IAnalyzer
     {
-        private event Action<string, Order> OrderFailed;
+        public event Action<string, Order> OrderFailed;
 
         public string Analyze(string fileName, Storage storage)
         {
-            OrderFailed += FailedOrderHandler;
             string response = string.Empty;
             using (StreamReader reader = new StreamReader(fileName))
             {
@@ -47,33 +46,6 @@ namespace Homework5
                 return response;
             }
         }
-        private void FailedOrderHandler(string path, Order order)
-        {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());           
-            builder.AddJsonFile("appsettings.json");
-            var config = builder.Build();
-            var pathForSimilar = config.GetSection("pathForSimilarProducts").Value!;
-            using (StreamWriter writer = new StreamWriter("C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework8_Budzyn_S_I\\result.txt", true))
-            {
-                using (StreamReader reader = new StreamReader(pathForSimilar))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        var currItems = reader.ReadLine()!.Split(',', StringSplitOptions.TrimEntries)!;
-                        if (currItems[0] == order.ProductName)
-                        {
-                            writer.WriteLine($"Unable to resolve order from {order.CompanyName} with {order.ProductName} - {order.Quantity} items. You can replace it with: ");
-                            foreach (var item in currItems.Skip(1))
-                            {
-                                writer.Write($"{item}, ");
-                            }
-                            writer.Write("\n");
-                            break;
-                        }
-                    }
-                }
-            }
-        }
+        
     }
 }

@@ -10,6 +10,6 @@ namespace Homework5
     internal interface IAnalyzer
     {
         string Analyze(string fileName, Storage storage);
-        
+        event Action<string, Order> OrderFailed;
     }
 }

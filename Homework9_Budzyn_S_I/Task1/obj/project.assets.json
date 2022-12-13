@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\Homework9\\Homework9.csproj",
+      "projectUniqueName": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\Homework9.csproj",
       "projectName": "Homework9",
-      "projectPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\Homework9\\Homework9.csproj",
+      "projectPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\Homework9.csproj",
       "packagesPath": "C:\\Users\\LapStore\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\Homework9\\obj\\",
+      "outputPath": "C:\\Users\\LapStore\\OneDrive\\Рабочий стол\\Sigma Camp\\Homework9_Budzyn_S_I\\Task1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LapStore\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -2,7 +2,7 @@
 {
     static class Program
     {
-        const string inputFile = @"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\Homework9\files\input.txt";
+        const string inputFile = @"C:\Users\LapStore\OneDrive\Рабочий стол\Sigma Camp\Homework9_Budzyn_S_I\Task1\input.txt";
        
         public static void Main(string[] args)
         {
