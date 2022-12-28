@@ -36,9 +36,20 @@ namespace Homework8
             Console.WriteLine("Pivot random - " + watch.ElapsedMilliseconds);
             Console.WriteLine(new String('_', 50));
 
+
             for (int i = 0; i < productsPivotFirst.Count; i++)
             {
                 Console.WriteLine(productsPivotFirst[i].Name + $". Price - {productsPivotFirst[i].Price}");
+            }
+            Console.WriteLine(new String('_', 50));
+            for (int i = 0; i < productsPivotLast.Count; i++)
+            {
+                Console.WriteLine(productsPivotLast[i].Name + $". Price - {productsPivotLast[i].Price}");
+            }
+            Console.WriteLine(new String('_', 50));
+            for (int i = 0; i < productsPivotRandom.Count; i++)
+            {
+                Console.WriteLine(productsPivotRandom[i].Name + $".Price - {productsPivotRandom[i].Price}");
             }
            
         }
