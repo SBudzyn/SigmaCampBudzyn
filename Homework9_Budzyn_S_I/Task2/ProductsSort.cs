@@ -15,74 +15,74 @@ namespace Homework9
     }
     internal static class ProductsSort
     {
-        public static void QuickSort(List<Product> array, int startIndex, int endIndex, Pivot pivot)
+        public static void QuickSort(List<Product> products, int start, int end, Pivot pivot)
         {
-            if (startIndex < endIndex)
+            if (start < end)
             {
                 int partitionPivot = 0;
 
                 switch (pivot)
                 {
                     case Pivot.Last:
-                        partitionPivot = PartitionLastPivot(array, startIndex, endIndex);
+                        partitionPivot = PartitionLastPivot(products, start, end);
                         break;
                     case Pivot.First:
-                        partitionPivot = PartitionFirstPivot(array, startIndex, endIndex);
+                        partitionPivot = PartitionFirstPivot(products, start, end);
                         break;
                     case Pivot.Random:
-                        partitionPivot = PartitionRandomPivot(array, startIndex, endIndex);
+                        partitionPivot = PartitionRandomPivot(products, start, end);
                         break;
                 }
 
-                QuickSort(array, startIndex, partitionPivot - 1, pivot);
-                QuickSort(array, partitionPivot + 1, endIndex, pivot);
+                QuickSort(products, start, partitionPivot - 1, pivot);
+                QuickSort(products, partitionPivot + 1, end, pivot);
             }
         }
-        private static int PartitionLastPivot(List<Product> array, int startIndex, int endIndex)
+        private static int PartitionLastPivot(List<Product> products, int start, int end)
         {
-            Product pivot = array[endIndex];
-            int pivotNewPlaceIndex = startIndex - 1;
+            Product pivot = products[end];
+            int pivotNewPlaceIndex = start - 1;
 
-            for (int i = startIndex; i <= endIndex - 1; i++)
+            for (int i = start; i <= end - 1; i++)
             {
-                if (pivot.Price > array[i].Price)
+                if (pivot.Price > products[i].Price)
                 {
                     pivotNewPlaceIndex++;
-                    Swap(array, pivotNewPlaceIndex, i);
+                    Swap(products, pivotNewPlaceIndex, i);
                 }
             }
-            Swap(array, pivotNewPlaceIndex + 1, endIndex);
+            Swap(products, pivotNewPlaceIndex + 1, end);
             return pivotNewPlaceIndex + 1;
         }
 
-        private static int PartitionFirstPivot(List<Product> array, int startIndex, int endIndex)
+        private static int PartitionFirstPivot(List<Product> products, int start, int end)
         {
-            Product pivot = array[startIndex];
-            int pivotNewPlaceIndex = endIndex + 1;
+            Product pivot = products[start];
+            int pivotNewPlaceIndex = end + 1;
 
-            for (int i = endIndex; i > startIndex; i--)
+            for (int i = end; i > start; i--)
             {
-                if (array[i].Price > pivot.Price)
+                if (products[i].Price > pivot.Price)
                 {
                     pivotNewPlaceIndex--;
-                    Swap(array, pivotNewPlaceIndex, i);
+                    Swap(products, pivotNewPlaceIndex, i);
                 }
             }
-            Swap(array, pivotNewPlaceIndex - 1, startIndex);
+            Swap(products, pivotNewPlaceIndex - 1, start);
             return pivotNewPlaceIndex - 1;
         }
-        private static int PartitionRandomPivot(List<Product> array, int startIndex, int endIndex)
+        private static int PartitionRandomPivot(List<Product> products, int start, int end)
         {
             var rand = new Random();
-            int pivotIndex = rand.Next(startIndex, endIndex - 1);
-            Swap(array, pivotIndex, endIndex);
-            return PartitionLastPivot(array, startIndex, endIndex);
+            int pivotIndex = rand.Next(start, end - 1);
+            Swap(products, pivotIndex, end);
+            return PartitionLastPivot(products, start, end);
         }
-        private static void Swap(List<Product> array, int i, int j)
+        private static void Swap(List<Product> products, int i, int j)
         {
-            Product temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            Product temp = products[i];
+            products[i] = products[j];
+            products[j] = temp;
         }
     }
 }
